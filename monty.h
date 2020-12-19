@@ -1,6 +1,11 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <limits.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -32,6 +37,13 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct global
+{
+        stack_t stack;
+        unsigned int line_number;
+} global_v;
 
+void pall(stack_t **stack, unsigned int line_number);
+void push(stack_t **stack,int val);
 
 #endif
