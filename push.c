@@ -2,7 +2,9 @@
 
 void push(stack_t **stack, int val)
 {
-    stack_t *temp = (*stack);
+    (void) stack;
+    (void) val;
+    /*stack_t *temp = (*stack);
     stack_t *new = malloc(sizeof(stack_t));
     if (new == NULL)
     {
@@ -17,5 +19,6 @@ void push(stack_t **stack, int val)
     {
 		temp->prev = new;
 	    temp = new;
-    }
+    }*/
+    printf("Hola soy la funcion push");
 }

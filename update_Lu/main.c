@@ -8,33 +8,33 @@
  */
 int main(int argc, char **argv)
 {
-    FILE *file;
-    instruction_t func_array[] = {
-		{"pall", pall}
-    };
-    int j = 0;
-    char *line = NULL;
+  ssize_t fdclose, fdread, fdwrite;
+  int fd;
+  const char *file = argv[1];
+  char *new;
 
-    (void) argc;
+  (void) argc;
+  new = malloc(sizeof(char));
 
-    if (argc != 2)
+  fd = open(file, O_RDONLY);
+  if (fd < 0)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
+		return (0);
 	}
-
-    file = fopen(argv[1], "r");
-    if (file == NULL)
-    {
-        fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-    }
-
-    while(fgets(line, sizeof(line), file))
-    {
-       if (strcmp(func_array[j].opcode, argv[0]) == 0)
-
-	       func_array.f(&(global_v.stack), global_v.line_number); /*should pass the stack where to do the function and the line where it is*/
-    }
-    return (0);
-}
+  fdread = read(fd, new, 100);
+  if (fdread < 0)
+	{
+		return (0);
+	}
+  fdwrite = write(STDOUT_FILENO, new, fdread);
+  if (fdwrite < 0)
+	{
+		return (0);
+	}
+  fdclose = close(fd);
+  if (fdclose < 0)
+	{
+		return (0);
+	}
+  return (fdread);
+}    
