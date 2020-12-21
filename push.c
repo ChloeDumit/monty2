@@ -5,7 +5,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
     stack_t *new;
     char *num = vari.num;
-    unsigned int j;
+
 
     (void) line_number;
     new = malloc(sizeof(stack_t));
@@ -17,7 +17,7 @@ void push(stack_t **stack, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
 
-    if (num[j] >= 48 && num[j] <= 57)
+    if (*num >= 48 && *num <= 57)
     {
     new->n = atoi(num);
     new->next = (*stack);
