@@ -6,6 +6,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <limits.h>
+#include <sys/stat.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -39,13 +40,18 @@ typedef struct instruction_s
 
 typedef struct global
 {
-        stack_t stack;
-        unsigned int line_number;
-} global_v;
+	FILE *fil;
+	unsigned int line_number;
+	char *num;
+	int queue_ask;
+	stack_t *mystack;
+} var_;
+
+extern var_ var;
 
 void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, int val);
 void pint(stack_t **stack, unsigned int line_number);
 void hello( __attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number);
-
+void run(char (*refer)[100]);
 #endif   
