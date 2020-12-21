@@ -1,5 +1,5 @@
 #include "monty.h"
-extern var_ var;
+var_1 vari;
 /**
  * exec - Entry point
  * Description: execute opcode function
@@ -10,23 +10,23 @@ extern var_ var;
  {
      int j = 0;
      instruction_t funcs[] = {
+         {"push", push},
          {"pall", pall},
-         {"push", push}
          {NULL, NULL},
      };
-     for (j = 0; j < 2; j++)
+     for (j = 0; j < 3; j++)
      {
          if(strcmp(funcs[j].opcode, refer[0]) == 0)
          {
-             var.num = refer[1];
-             funcs[j].f(&(var.stack), var.line_number);
+             vari.num = refer[1];
+             funcs[j].f(&(vari.mystack), vari.line_number);
              return;
          }
          else if (j == 2)
          {
-             fprintf(stderr, "L%u: unknown instruction %s\n", var.line_number, refer[0]);
-             fclose(var.file);
-             f_list(mystack);
+             fprintf(stderr, "L%u: unknown instruction %s\n", vari.line_number, refer[0]);
+             fclose(vari.fil);
+             f_list(vari.mystack);
              exit(EXIT_FAILURE);
          }
     }

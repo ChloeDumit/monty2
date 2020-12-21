@@ -1,24 +1,24 @@
 #include "monty.h"
+var_1 vari;
 
-void push(stack_t **stack, int val)
+void push(stack_t **stack, unsigned int line_number)
 {
-    (void) stack;
-    (void) val;
-    /*stack_t *temp = (*stack);
-    stack_t *new = malloc(sizeof(stack_t));
+    stack_t *new;
+    char *num = vari.num;
+
+    (void) line_number;
+    new = malloc(sizeof(stack_t));
     if (new == NULL)
     {
-        fprintf(stdout, "Error: malloc failed\n");
+        fprintf(stderr, "Error: malloc failed\n");
+        f_list(vari.mystack);
+        fclose(vari.fil);
+        exit(EXIT_FAILURE);
     }
-
-    new->n = val;
-	new->next = temp;
-	new->prev = NULL;
-
-    if (temp != NULL)
-    {
-		temp->prev = new;
-	    temp = new;
-    }*/
-    printf("Hola soy la funcion push");
+    new->n = atoi(num);
+    new->next = (*stack);
+    new->prev = NULL;
+    if((*stack) != NULL)
+        (*stack)->prev = new;
+    (*stack) = new;
 }

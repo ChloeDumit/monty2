@@ -1,7 +1,8 @@
 #include "monty.h"
 
 #define TOKEN_DELIM " \t\n\r"
-extern var_ var;
+
+var_1 vari;
 
 /**
  * main - runs monty interpreter
@@ -22,21 +23,21 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-    var.fil = fopen(argv[1], "r");
-    if (var.fil == NULL)
+    vari.fil = fopen(argv[1], "r");
+    if (vari.fil == NULL)
     {
         fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
     }
 
-    var.line_number = 1;
-    var.mystack = NULL;
-    var.queue_ask = 0;
+    vari.line_number = 1;
+    vari.mystack = NULL;
+    vari.queue_ask = 0;
 
 
-    while(fgets(line, sizeof(line), var.fil))
+    while(fgets(line, sizeof(line), vari.fil))
     {
-        
+
         i = 0;
         memset(refer[0], 0, 100);
         memset(refer[1], 0, 100);
@@ -51,9 +52,9 @@ int main(int argc, char **argv)
             }
             run(refer);
         }
-        var.line_number++;
+        vari.line_number++;
     }
-    fclose(var.fil);
-    f_list(var.mystack);
+    fclose(vari.fil);
+    f_list(vari.mystack);
     return(0);
 }

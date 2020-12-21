@@ -45,13 +45,14 @@ typedef struct global
 	char *num;
 	int queue_ask;
 	stack_t *mystack;
-} var_;
+} var_1;
 
-extern var_ var;
+extern var_1 vari;
 
 void pall(stack_t **stack, unsigned int line_number);
-void push(stack_t **stack, int val);
+void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void hello( __attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number);
 void run(char (*refer)[100]);
+void f_list(stack_t *mystack);
 #endif   

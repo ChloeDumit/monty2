@@ -1,4 +1,5 @@
 #include "monty.h"
+var_1 vari;
 /**
  * pall - Prints All values on stack from top down
  * @stack: Struct stack_s as stack_t **ptr
