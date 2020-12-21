@@ -55,4 +55,5 @@ void pint(stack_t **stack, unsigned int line_number);
 void hello( __attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number);
 void run(char (*refer)[100]);
 void f_list(stack_t *mystack);
+void nop(stack_t **stack, unsigned int line_number);
 #endif   
