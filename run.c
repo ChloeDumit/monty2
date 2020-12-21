@@ -14,7 +14,7 @@ var_1 vari;
          {"pall", pall},
          {NULL, NULL},
      };
-     for (j = 0; j < 3; j++)
+     for (j = 0; j < 4; j++)
      {
          if(strcmp(funcs[j].opcode, refer[0]) == 0)
          {
@@ -31,7 +31,7 @@ var_1 vari;
              return;
          }
         
-         else if (j == 2)
+         else if (j == 3)
          {
              fprintf(stderr, "L%u: unknown instruction %s\n", vari.line_number, refer[0]);
              fclose(vari.fil);
