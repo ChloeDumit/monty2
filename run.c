@@ -30,12 +30,5 @@ var_1 vari;
             f_list(vari.mystack);
             exit(EXIT_FAILURE);
         }
-        else
-        {
-            fprintf(stderr, "L%u: unknown instruction %s\n", vari.line_number, refer[0]);
-            fclose(vari.fil);
-            f_list(vari.mystack);
-            exit(EXIT_FAILURE);
-        }
     }
  }
