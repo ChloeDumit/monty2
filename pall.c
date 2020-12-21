@@ -17,3 +17,4 @@ var_1 vari;
      temp = temp->next;
     }
 }
+

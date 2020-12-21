@@ -22,3 +22,4 @@ var_1 vari;
 	}
 	mystack = NULL;
 }
+
