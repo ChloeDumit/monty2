@@ -17,8 +17,6 @@ void push(stack_t **stack, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
 
-    for (j = 0; j < strlen(vari.num); j++)
-    {
     if (num[j] >= 48 && num[j] <= 57)
     {
     new->n = atoi(num);
@@ -32,8 +30,7 @@ void push(stack_t **stack, unsigned int line_number)
     {
         fprintf(stderr,"L%d: usage: push integer\n", vari.line_number);
                  fclose(vari.fil);
-                 free(new);
+		 f_list(vari.mystack);
 		 exit(EXIT_FAILURE);
-    }
     }
 }
