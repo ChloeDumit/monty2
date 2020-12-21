@@ -31,7 +31,7 @@ var_1 vari;
              return;
          }
         
-         else
+         else if (j == 2)
          {
              fprintf(stderr, "L%u: unknown instruction %s\n", vari.line_number, refer[0]);
              fclose(vari.fil);
