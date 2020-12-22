@@ -7,9 +7,11 @@
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	if (dlistint_len(*stack) < 2)
+	if (stack == NULL || (*stack) == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		f_list(vari.mystack);
+        fclose(vari.fil);
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -18,25 +20,6 @@ void add(stack_t **stack, unsigned int line_number)
 		*stack = (*stack)->next;
 		(*stack)->prev = NULL;
 	}
-
-
-
-/**
- * dlistint_len - returns the number of elements in a linstint.
- * @h: h
- * Return: Always 0.
- */
-size_t dlistint_len(const dlistint_t *h)
-{
-	size_t elements = 0;
-
-	if (h == NULL)
-		return (0);
-
-	while (h)
-	{
-		elements++;
-		h = h->next;
-	}
-	return (elements);
 }
+
+
