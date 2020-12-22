@@ -11,7 +11,7 @@ void add(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		f_list(vari.mystack);
-        fclose(vari.fil);
+		fclose(vari.fil);
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -20,7 +20,7 @@ void add(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = NULL;
 		free(*stack);
 		*stack = (*stack)->next;
-	
+
 	}
 }
 

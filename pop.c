@@ -11,9 +11,9 @@ void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = NULL;
 
-        if (!stack)
+	if (!stack)
 	{
-		fprintf(stderr,"L%i: can't pop an empty stack", line_number);
+		fprintf(stderr, "L%i: can't pop an empty stack", line_number);
 		f_list(vari.mystack);
 		fclose(vari.fil);
 		exit(EXIT_FAILURE);

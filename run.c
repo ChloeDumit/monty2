@@ -1,5 +1,5 @@
 #include "monty.h"
-var_1 vari;
+
 /**
  * run - Entry point
  * @refer: double pointer that point to 2d array
